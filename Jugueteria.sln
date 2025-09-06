@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Jugueteria", "Jugueteria\", "{342695F1-1785-BD96-3A08-BE8308CCE1E8}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{fa54c203-44f3-4425-a245-6ea79273b760}|BE.dll;{d757c018-38dd-49be-8583-29f4957a9217}|BLL.dll;{0C8110B5-2A03-41FA-A841-B9C9DB9366A4}|DAL.dll;{219c3920-3233-487c-b663-854d38ae2870}|SIL.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50469"
+		Debug.AspNetCompiler.PhysicalPath = "Jugueteria\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50469\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50469"
+		Release.AspNetCompiler.PhysicalPath = "Jugueteria\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50469\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50469"
+		SlnRelativePath = "Jugueteria\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE", "BE\BE.csproj", "{FA54C203-44F3-4425-A245-6EA79273B760}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{D757C018-38DD-49BE-8583-29F4957A9217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{0C8110B5-2A03-41FA-A841-B9C9DB9366A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIL", "SIL\SIL.csproj", "{219C3920-3233-487C-B663-854D38AE2870}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{342695F1-1785-BD96-3A08-BE8308CCE1E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{342695F1-1785-BD96-3A08-BE8308CCE1E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{342695F1-1785-BD96-3A08-BE8308CCE1E8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{342695F1-1785-BD96-3A08-BE8308CCE1E8}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{FA54C203-44F3-4425-A245-6EA79273B760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA54C203-44F3-4425-A245-6EA79273B760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA54C203-44F3-4425-A245-6EA79273B760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA54C203-44F3-4425-A245-6EA79273B760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D757C018-38DD-49BE-8583-29F4957A9217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D757C018-38DD-49BE-8583-29F4957A9217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D757C018-38DD-49BE-8583-29F4957A9217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D757C018-38DD-49BE-8583-29F4957A9217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C8110B5-2A03-41FA-A841-B9C9DB9366A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C8110B5-2A03-41FA-A841-B9C9DB9366A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C8110B5-2A03-41FA-A841-B9C9DB9366A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C8110B5-2A03-41FA-A841-B9C9DB9366A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{219C3920-3233-487C-B663-854D38AE2870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219C3920-3233-487C-B663-854D38AE2870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219C3920-3233-487C-B663-854D38AE2870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219C3920-3233-487C-B663-854D38AE2870}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F9E0DF8-6EF0-4DA1-90D6-A9F5A0CA7B58}
+	EndGlobalSection
+EndGlobal

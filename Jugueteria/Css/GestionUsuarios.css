@@ -1,0 +1,221 @@
+﻿/* Contenedor principal */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* Permite que los bloques salten a otra línea si no hay espacio */
+    gap: 30px;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor del GridView */
+.grid-container {
+    flex: 1 1 45%; /* Ocupa cerca del 45% del ancho */
+    text-align: left;
+    max-height: 350px; /* Altura máxima razonable */
+    overflow-y: auto; /* Scroll interno si supera la altura */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 20px;
+    box-sizing: border-box;
+    min-width: 300px; /* Evita que se reduzca demasiado */
+}
+
+    /* Título dentro del contenedor del grid */
+    .grid-container h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #333;
+        text-align: center;
+        font-style: italic;
+        font-weight: 600;
+    }
+
+/* Contenedor que envuelve el GridView para darle borde y sombra */
+.grid-wrapper {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos base para la tabla GridView */
+.grid-admin {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background-color: white; /* Fondo blanco */
+}
+
+    /* Celdas y encabezados de la tabla */
+    .grid-admin th, .grid-admin td {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: normal; /* No negrita */
+        font-style: normal; /* No cursiva */
+        background-color: white; /* Fondo blanco */
+    }
+
+    /* Hover en filas de la tabla */
+    .grid-admin tr:hover td {
+        background-color: #f9fafe;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Estilo para celdas que usan colspan */
+    .grid-admin td[colspan] {
+        padding: 20px;
+        color: #888;
+        font-style: italic;
+    }
+
+/* Encabezado específico para usuarios (degradado azul) */
+.grid-usuarios th {
+    background: linear-gradient(90deg, #4f46e5, #0ea5e9);
+    color: #fff;
+    font-weight: bold;
+}
+
+.form-usuarios {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    .form-usuarios h3 {
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-rojo {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-rojo:hover {
+        background-color: #c62828;
+    }
+
+/* Cada fila que contendrá campos en fila horizontal */
+.form-row-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* para que salte si no hay espacio */
+}
+
+/* Cada campo dentro de la fila */
+.form-row {
+    flex: 1 1 220px; /* ocupa espacio horizontal, mínimo 220px */
+    display: flex;
+    flex-direction: column;
+}
+
+    .form-row label {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 6px;
+    }
+
+.input-text,
+.input-select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[disabled], textarea[disabled], select[disabled] {
+    background-color: #e0e0e0; /* Gris claro */
+    color: #6c6c6c; /* Texto gris oscuro */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.label-error {
+    color: #d32f2f; /* rojo */
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+
+/* Contenedor de botones centrado */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.btn-accion:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+}
+
+.btn-accion {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 140px;
+}
+
+.btn-accion:hover {
+    background-color: #0056b3;
+}
+
+.mensaje-exito {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.label-exito {
+    color: #28a745; /* Verde */
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 600;
+}
+

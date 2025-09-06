@@ -1,0 +1,58 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(145deg, #fff8e7, #ffe1f5);
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo glassmorphism + degradado juguetero */
+.navbar-jugueteria {
+    background: linear-gradient(90deg, #ffb6f2, #ffe399);
+    border-bottom: 2px solid #ffc0cb;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-jugueteria .navbar-brand {
+    font-size: 2rem;
+    color: #ff3399;
+    text-shadow: 1px 1px 2px #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-jugueteria .nav-link {
+    color: #6c005d !important;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 10px 18px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-jugueteria .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff66b2;
+    transition: 0.3s;
+}
+
+.navbar-jugueteria .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-jugueteria .nav-link:hover {
+    background-color: #ffd6eb;
+    color: #ff3399 !important;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0.3);
+}

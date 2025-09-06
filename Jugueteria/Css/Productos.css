@@ -1,0 +1,96 @@
+﻿.catalogo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.producto-card {
+    width: 300px;
+    background-color: #fff0f5;
+    border: 2px dashed #ff69b4;
+    border-radius: 12px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+    .producto-card:hover {
+        transform: scale(1.03);
+    }
+
+.producto-imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+h3 {
+    margin: 10px 0;
+    color: #d63384;
+}
+
+.producto-precio {
+    font-size: 18px;
+    color: #28a745;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+}
+
+.por-unidad {
+    margin-left: 5px;
+    font-size: 14px;
+    color: black !important;
+}
+
+.cantidad-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.input-cantidad {
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #fff;
+    border: 2px solid #ff69b4;
+    border-radius: 5px;
+}
+
+.btn-aumentar,
+.btn-disminuir {
+    background-color: #ffc0cb;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-aumentar:hover,
+.btn-disminuir:hover {
+    background-color: #ff85a2;
+}
+
+.btn-agregar {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-agregar:hover {
+    background-color: #e055a3;
+}

@@ -1,0 +1,27 @@
+{
+    "es":{
+            "Login_H_IniciarSesion": "Iniciar Sesion",
+            "Login_lblUsuario": "Correo electrónico:",
+            "Login_rfvUsuario": "El correo es obligatorio.",
+            "Login_revUsuario": "Debe ser un correo válido.",
+            "Login_lblPassword": "Contraseña:",
+            "Login_rfvPassword": "La contraseña es obligatoria.",
+            "Login_lblMensajeError": "El correo o la contraseña son incorrectos.",
+            "Login_btnLogin": "Iniciar Sesion",
+            "Login_BtnRegistro" : "Registrarse",
+            "dllUsuarios_Col1": "Nombre"
+
+    },
+    "en":{
+            "Login_H_IniciarSesion": "Login",
+            "Login_lblUsuario": "Email:",
+            "Login_rfvUsuario": "Email is mandatory.",
+            "Login_revUsuario": "It must be a valid email format",
+            "Login_lblPassword": "Password:",
+            "Login_rfvPassword": "Password is mandatory",
+            "Login_lblMensajeError": "Either Email or Password are wrong",
+            "Login_btnLogin": "Login",
+            "Login_BtnRegistro" : "Register",
+            "dllUsuarios_Col1": "Name"
+    }
+}

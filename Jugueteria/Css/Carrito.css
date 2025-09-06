@@ -1,0 +1,120 @@
+﻿/* Contenedor general del carrito */
+.contenedor-carrito {
+    width: 65%;
+    float: left;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+/* Cada producto en carrito */
+.item-carrito {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Imagen producto */
+.img-carrito {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 15px;
+}
+
+/* Información del producto */
+.info-carrito {
+    flex-grow: 1;
+}
+
+    .info-carrito h4 {
+        margin: 0 0 5px 0;
+        color: #333;
+        font-weight: 700;
+    }
+
+    .info-carrito p {
+        margin: 2px 0;
+        color: #555;
+    }
+
+/* Botón eliminar */
+.btn-eliminar {
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 32px;
+}
+
+/* Panel totales (a la derecha) */
+.panel-totales {
+    width: 30%;
+    float: right;
+    background-color: #e9f7ef;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 120px;
+    box-shadow: 0 1px 6px rgba(0,128,0,0.2);
+}
+
+    .panel-totales h3 {
+        color: #2f6627;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .panel-totales p {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+/* Botón pagar */
+.btn-pagar {
+    width: 100%;
+    font-weight: 700;
+}
+
+.mensaje-carrito-vacio {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    padding: 30px;
+    margin: 40px auto;
+    text-align: center;
+    border-radius: 10px;
+    width: 60%;
+    font-size: 1.2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-ir-tienda {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ff4081; /* Mismo color que botón Agregar al carrito */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-ir-tienda:hover {
+        background-color: #e91e63;
+    }
+
+/* Limpiar floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
