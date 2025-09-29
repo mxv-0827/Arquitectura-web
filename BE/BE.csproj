@@ -44,6 +44,8 @@
     <Compile Include="Bitacora.cs" />
     <Compile Include="Carrito.cs" />
     <Compile Include="Credenciales.cs" />
+    <Compile Include="Detalle.cs" />
+    <Compile Include="Factura.cs" />
     <Compile Include="Familia.cs" />
     <Compile Include="IComponent.cs" />
     <Compile Include="Permiso.cs" />

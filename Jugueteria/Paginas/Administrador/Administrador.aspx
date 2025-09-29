@@ -197,6 +197,7 @@
         <asp:Button CssClass="btn-verde" runat="server" id="btnRestaurarBD" OnClick="btnRestaurarDB_Click" Text="Restaurar Base de Datos"/>
         <asp:Button CssClass="btn-verde" runat="server" id="btnGestionarRolesPermisos" OnClick="btnGestionRolesPermisos_Click" Text="Gestionar Roles y Permisos"/>
         <asp:Button CssClass="btn-verde" runat="server" id="btnGestionarUsuarios" OnClick="btnGestionUsuarios_Click" Text="Gestionar Usuarios"/>
+        <asp:Button CssClass="btn-verde" runat="server" id="btnEstadisticas" OnClick="btnEstadisticas_Click" Text="Ir a 'Estadisticas'"/>
     </div>
 
 </asp:Content>

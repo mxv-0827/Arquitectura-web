@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CalcularTotalCarrito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carritoJson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcularTotalCarritoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalcularTotalCarritoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerEstadistica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detalles" type="tns:ArrayOfProductoDetalle" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductoDetalle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductoDetalle" nillable="true" type="tns:ProductoDetalle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductoDetalle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NombreProducto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Subtotal" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerEstadisticaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerEstadisticaResult" type="tns:ArrayOfProductoEstadistica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductoEstadistica">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductoEstadistica" nillable="true" type="tns:ProductoEstadistica" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductoEstadistica">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NombreProducto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalVendido" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Porcentaje" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubtotalVendido" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalcularTotalCarritoSoapIn">
+    <wsdl:part name="parameters" element="tns:CalcularTotalCarrito" />
+  </wsdl:message>
+  <wsdl:message name="CalcularTotalCarritoSoapOut">
+    <wsdl:part name="parameters" element="tns:CalcularTotalCarritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEstadisticaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadistica" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEstadisticaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadisticaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="CalcularTotalCarrito">
+      <wsdl:input message="tns:CalcularTotalCarritoSoapIn" />
+      <wsdl:output message="tns:CalcularTotalCarritoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstadistica">
+      <wsdl:input message="tns:ObtenerEstadisticaSoapIn" />
+      <wsdl:output message="tns:ObtenerEstadisticaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalcularTotalCarrito">
+      <soap:operation soapAction="http://tempuri.org/CalcularTotalCarrito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstadistica">
+      <soap:operation soapAction="http://tempuri.org/ObtenerEstadistica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalcularTotalCarrito">
+      <soap12:operation soapAction="http://tempuri.org/CalcularTotalCarrito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstadistica">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerEstadistica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="https://localhost:44367/WebService_Negocio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="https://localhost:44367/WebService_Negocio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

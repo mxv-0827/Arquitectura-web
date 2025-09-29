@@ -44,6 +44,8 @@
     <Compile Include="BD_Conexion.cs" />
     <Compile Include="DAL_Bitacora.cs" />
     <Compile Include="DAL_Credenciales.cs" />
+    <Compile Include="DAL_Detalle.cs" />
+    <Compile Include="DAL_Factura.cs" />
     <Compile Include="DAL_Integridad.cs" />
     <Compile Include="DAL_Permisos.cs" />
     <Compile Include="DAL_Productos.cs" />
