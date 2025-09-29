@@ -14,7 +14,7 @@
         <h3>Detalle de la compra</h3>
         <p>Total productos: <asp:Label ID="lblCantidadTotal" runat="server" Text="0" /></p>
         <p>Total a pagar: $<asp:Label ID="lblTotalPagar" runat="server" Text="0.00" /></p>
-        <asp:Button ID="btnPagar" runat="server" CssClass="btn btn-success btn-pagar" Text="Pagar" />
+        <asp:Button ID="btnPagar" runat="server" CssClass="btn btn-success btn-pagar" Text="Pagar" OnClick="btnPagar_Click" />
     </asp:Panel>
 
     <div class="contenedor-carrito">
@@ -36,5 +36,24 @@
             </ItemTemplate>
         </asp:Repeater>
     </div>
+
+    <div id="modalPagoExitoso" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+         background-color:rgba(0,0,0,0.5); z-index:1000; text-align:center;">
+        <div style="background-color:white; padding:20px; margin:100px auto; width:300px; border-radius:10px; box-shadow:0 0 10px #000;">
+            <h3>¡Pago registrado!</h3>
+            <p>Su compra se ha realizado con éxito.</p>
+            <button onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function mostrarModal() {
+            document.getElementById('modalPagoExitoso').style.display = 'block';
+        }
+
+        function cerrarModal() {
+            document.getElementById('modalPagoExitoso').style.display = 'none';
+        }
+    </script>
 
 </asp:Content>

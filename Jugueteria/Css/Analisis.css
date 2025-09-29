@@ -1,0 +1,24 @@
+﻿.titulo-analisis {
+    color: #6a0dad; /* violeta */
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.grid-analisis {
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.grid-analisis th {
+    background-color: #6a0dad; /* violeta */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-analisis td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}

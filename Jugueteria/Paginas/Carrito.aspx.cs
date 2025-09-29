@@ -1,8 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BE; // Suponiendo que acá está la clase ProductoCarrito, Carrito, etc.
+using BLL;
+using localhost;
+using System;
 using System.Linq;
+using System.Web.Script.Serialization;
+using System.Web.UI;
 using System.Web.UI.WebControls;
-using BE; // Suponiendo que acá está la clase ProductoCarrito, Carrito, etc.
 
 public partial class Paginas_Carrito : System.Web.UI.Page
 {
@@ -16,28 +19,29 @@ public partial class Paginas_Carrito : System.Web.UI.Page
 
     private void CargarCarrito()
     {
-        Carrito carrito = Session["Carrito"] as Carrito;
+        WebService webService = new WebService();
 
-        if (carrito == null || carrito.lstProductos.Count == 0)
-        {
-            pnlCarritoVacio.Visible = true;
-            pnlTotales.Visible = false;
-            rptCarrito.DataSource = null;
-            rptCarrito.DataBind();
-        }
-        else
-        {
-            pnlCarritoVacio.Visible = false;
-            pnlTotales.Visible = true;
+        BE.Carrito carritoBE = Session["Carrito"] as BE.Carrito;
 
-            rptCarrito.DataSource = carrito.lstProductos;
-            rptCarrito.DataBind();
+        pnlCarritoVacio.Visible = false;
+        pnlTotales.Visible = true;
 
-            // Actualizar totales
-            lblCantidadTotal.Text = carrito.lstProductos.Sum(p => p.Cantidad).ToString();
-            lblTotalPagar.Text = carrito.lstProductos.Sum(p => p.Cantidad * p.PrecioUnitario).ToString("N2");
-        }
+        rptCarrito.DataSource = carritoBE.lstProductos;
+        rptCarrito.DataBind();
+
+        // Actualizar totales
+        lblCantidadTotal.Text = carritoBE.lstProductos.Sum(p => p.Cantidad).ToString();
+
+        // --- Serialización a JSON para enviar al WebService ---
+        var js = new JavaScriptSerializer();
+        string carritoJson = js.Serialize(carritoBE);
+
+        // Llamada al WebService pasando el JSON
+        decimal total = webService.CalcularTotalCarrito(carritoJson);
+
+        lblTotalPagar.Text = total.ToString();
     }
+
 
     protected void btnEliminar_Click(object sender, EventArgs e)
     {
@@ -45,6 +49,7 @@ public partial class Paginas_Carrito : System.Web.UI.Page
         int idProducto = int.Parse(btnEliminar.CommandArgument);
 
         Carrito carrito = Session["Carrito"] as Carrito;
+
         if (carrito != null)
         {
             var productoEliminar = carrito.lstProductos.FirstOrDefault(p => p.ID == idProducto);
@@ -61,5 +66,55 @@ public partial class Paginas_Carrito : System.Web.UI.Page
         }
 
         CargarCarrito();
+    }
+
+    protected void btnPagar_Click(object sender, EventArgs e)
+    {
+        Usuario usuario = Session["UsuarioLogueado"] as Usuario;
+        Carrito carrito = Session["Carrito"] as Carrito;
+
+        BLL_Factura bll_Factura = new BLL_Factura();
+        BLL_Detalle bll_Detalle = new BLL_Detalle();
+
+
+        Factura factura = new Factura
+        {
+            ID = Guid.NewGuid(),
+            DNI_Cliente = usuario.DNI,
+            CantidadProductos = carrito.lstProductos.Count,
+            PrecioTotal = decimal.Parse(lblTotalPagar.Text),
+            FechaCompra = DateTime.Now
+        };
+
+        bll_Factura.RegistrarFactura(factura);
+
+        foreach(ProductoCarrito producto in carrito.lstProductos)
+        {
+            Detalle detalle = new Detalle
+            {
+                ID_Factura = factura.ID,
+                ID_Producto = producto.ID,
+                Cantidad = producto.Cantidad,
+                Subtotal = producto.PrecioUnitario * producto.Cantidad
+            };
+
+            bll_Detalle.AgregarDetalle(detalle);
+        }
+
+        // --- Vaciar carrito ---
+        carrito.lstProductos.Clear();
+        carrito.CantidadProductos = 0;
+        carrito.PrecioTotal = 0;
+        Session["Carrito"] = carrito;
+
+        // Actualizar controles en la página
+        rptCarrito.DataSource = null;
+        rptCarrito.DataBind();
+        lblCantidadTotal.Text = "0";
+        lblTotalPagar.Text = "0.00";
+
+        // Mostrar el modal
+        string script = "mostrarModal();";
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModalPago", script, true);
     }
 }

@@ -126,4 +126,9 @@ public partial class Paginas_Administrador : System.Web.UI.Page
     {
         Response.Redirect("/Paginas/Administrador/GestionUsuarios.aspx");
     }
+
+    protected void btnEstadisticas_Click(object sender, EventArgs a)
+    {
+        Response.Redirect("/Paginas/Administrador/Analisis.aspx");
+    }
 }

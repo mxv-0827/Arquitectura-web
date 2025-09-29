@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="BLL_Bitacora.cs" />
     <Compile Include="BLL_Credenciales.cs" />
+    <Compile Include="BLL_Detalle.cs" />
+    <Compile Include="BLL_Factura.cs" />
     <Compile Include="BLL_Integridad.cs" />
     <Compile Include="BLL_Permisos.cs" />
     <Compile Include="BLL_Productos.cs" />
