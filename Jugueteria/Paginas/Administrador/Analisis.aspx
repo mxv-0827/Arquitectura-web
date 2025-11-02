@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Analisis.aspx.cs" Inherits="Paginas_Administrador_Analisis" %>
+﻿<%@  Page Async ="true" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Analisis.aspx.cs" Inherits="Paginas_Administrador_Analisis" %>
 
 <asp:Content ID="HeadContent1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="/Css/Analisis.css" rel="stylesheet" />
@@ -10,6 +10,18 @@
                    Font-Size="Large" Font-Bold="true" CssClass="titulo-analisis" />
         
         <br /><br />
+        <%-- NUEVA SECCIÓN DE BOTONES --%>
+        <div class="accion-container">
+            <asp:Button ID="btnGuardarXml" runat="server" Text="Guardar Reporte XML" 
+                CssClass="btn-accion" OnClick="btnGuardarXml_Click" />
+                
+            <asp:Button ID="btnVerReportes" runat="server" Text="Ver Reportes Guardados" 
+                CssClass="btn-accion" OnClick="btnVerReportes_Click" />
+            
+            <br /><br />
+            <asp:Literal ID="ltlMensaje" runat="server" EnableViewState="false" />
+        </div>
+        <%-- FIN DE NUEVA SECCIÓN --%>
 
         <asp:GridView ID="gvAnalisis" runat="server" AutoGenerateColumns="false" CssClass="grid-analisis">
             <Columns>

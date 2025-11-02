@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReporteEstadistica>
+  <Producto>
+    <NombreProducto>Bloques de numeros</NombreProducto>
+    <TotalVendido>4</TotalVendido>
+    <SubtotalVendido>20.00</SubtotalVendido>
+    <Porcentaje>40</Porcentaje>
+  </Producto>
+  <Producto>
+    <NombreProducto>Autitos de juguete</NombreProducto>
+    <TotalVendido>2</TotalVendido>
+    <SubtotalVendido>20.00</SubtotalVendido>
+    <Porcentaje>20</Porcentaje>
+  </Producto>
+  <Producto>
+    <NombreProducto>Animalitos</NombreProducto>
+    <TotalVendido>2</TotalVendido>
+    <SubtotalVendido>16.00</SubtotalVendido>
+    <Porcentaje>20</Porcentaje>
+  </Producto>
+  <Producto>
+    <NombreProducto>Mario y speedo</NombreProducto>
+    <TotalVendido>2</TotalVendido>
+    <SubtotalVendido>23.00</SubtotalVendido>
+    <Porcentaje>20</Porcentaje>
+  </Producto>
+</ReporteEstadistica>

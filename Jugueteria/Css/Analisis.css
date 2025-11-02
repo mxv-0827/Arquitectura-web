@@ -22,3 +22,24 @@
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
+
+
+.accion-container {
+    margin-bottom: 20px;
+}
+
+.btn-accion {
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #8a2be2; /* Un morado similar al tuyo */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+    .btn-accion:hover {
+        background-color: #6a0dad; /* El morado oscuro de tu cabecera */
+    }

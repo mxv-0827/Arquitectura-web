@@ -19,7 +19,7 @@ namespace DAL
 
 
         //CONSTRUCTOR
-        private BD_Conexion() => _conexion = new SqlConnection("Server=FLATASS\\SQLEXPRESS; Database=Juegueteria_Web; Trusted_Connection=True;");
+        private BD_Conexion() => _conexion = new SqlConnection("Server=localhost; Database=Juegueteria_Web; Trusted_Connection=True;");
         
 
         //METODOS
